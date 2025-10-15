@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$LARRY - The Filthiest Shit-tzu on Solana</title>
+    <meta name="description" content="Larry - Eats poop, shares wealth. The filthiest shit-tzu memecoin on Solana. Join the pack and bark to the moon.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #FFD700;
+            --dark-gold: #B8860B;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+            --text-dim: #cccccc;
+            --accent: #ff8c00;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .logo-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .btn-nav {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: #000;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, #1a0f00 50%, var(--darker-bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '💩';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.03;
+            top: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '🚀';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.03;
+            bottom: 10%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            z-index: 1;
+        }
+
+        .hero-banner {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3);
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 60px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 80px rgba(255, 215, 0, 0.5); }
+        }
+
+        h1 {
+            font-size: 5rem;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        .ca-container {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ca-label {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .ca-address {
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: var(--text);
+            word-break: break-all;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: var(--darker-bg);
+        }
+
+        .section-light {
+            background: var(--dark-bg);
+        }
+
+        h2 {
+            font-size: 3.5rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 900;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--darker-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--text-dim);
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .about-text strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .about-logo {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.4);
+            transition: transform 0.5s;
+        }
+
+        .about-logo:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        /* Tokenomics */
+        .tokenomics {
+            background: var(--dark-bg);
+        }
+
+        .supply-info {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 50px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .token-card {
+            background: linear-gradient(135deg, var(--card-bg), #2a2a2a);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .token-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .token-percentage {
+            font-size: 3.8rem;
+            color: var(--gold);
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .token-label {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .token-desc {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            background: var(--darker-bg);
+        }
+
+        .roadmap-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .roadmap-phase {
+            background: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--gold);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .roadmap-phase:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .phase-title {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .roadmap-phase ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .roadmap-phase li {
+            font-size: 1.15rem;
+            margin: 15px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--text-dim);
+        }
+
+        .roadmap-phase li::before {
+            content: '💩';
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+
+        /* How to Buy */
+        .how-to-buy {
+            background: var(--dark-bg);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #000;
+        }
+
+        .step h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .step p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        /* Community */
+        .community {
+            background: var(--darker-bg);
+            text-align: center;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .social-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px) rotate(-2deg);
+            border-color: var(--gold);
+            background: linear-gradient(135deg, var(--card-bg), #2a2a2a);
+        }
+
+        .social-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .social-card h3 {
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .footer-tagline {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--text-dim);
+        }
+
+        .disclaimer {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 40px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            h1 { font-size: 3.5rem; }
+            .hero-tagline { font-size: 1.4rem; }
+            h2 { font-size: 2.8rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .hero-banner { border-radius: 10px; }
+            .cta-group { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-nav">$LARRY 💩</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#how-to-buy">How to Buy</a>
+            <a href="https://t.me/larrypoopgang" class="btn-nav" target="_blank">Join Community 🚀</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Reemplaza esta URL con tu imagen del banner completo -->
+            <img src="assests/larrybanner.jpeg" alt="Larry Banner" class="hero-banner">
+            
+            <h1>$LARRY</h1>
+            <p class="hero-tagline">Eats poop, shares wealth 💩🚀</p>
+            
+            <div class="cta-group">
+                <a href="#how-to-buy" class="btn btn-primary">Buy $LARRY</a>
+                <a href="https://t.me/larrypoopgang" class="btn btn-secondary" target="_blank">Join the Pack</a>
+            </div>
+
+            <div class="ca-container">
+                <div class="ca-label">📝 Contract Address (CA)</div>
+                <div class="ca-address">TBA - Coming Soon 🚀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        
+        <h2>Who is Larry? 🦴</h2>
+
+
+
+
+  <div class="about-text" style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+    <p>They say he devoured a cold wallet.<br>
+    That he sniffed out the memetic frequencies of the blockchain itself.<br>
+    That the moon was just his bathroom break.</p>
+
+    <p>But no one really knows where he came from.<br>
+    What we do know is this:</p>
+
+    <p>One day, a black-and-white creature appeared. Small. Furry. Glorious.<br>
+    With eyes full of innocence... and a dark, filthy purpose.</p>
+
+    <p>Larry — or as the chain would come to know him:<br>
+    <strong>The Shit-Tzu of Solana.</strong></p>
+
+    <p>He didn’t chase bones. He didn’t fetch sticks.<br>
+    He chased… something deeper. Something brown. Something shameful.</p>
+
+    <p>And when the world laughed, he didn’t care.<br>
+    He turned his flaw into fuel. His gross little habit… into a glorious digital revolution.</p>
+
+    <p>Now, $LARRY can’t be stopped.<br>
+    It multiplies. It moonwalks. It stinks of destiny.</p>
+
+    <p><em>But the truth? The real story behind Larry?<br>That hasn’t been told… yet.</em></p>
+
+    <p><strong>$LARRY isn’t just a token.<br>
+    It’s a tribute to imperfection, loyalty, and glorious absurdity.</strong></p>
+
+    <p><strong>Worship the weird. Embrace the stink. Bark to the moon.</strong></p>
+  </div>
+
+  <div style="text-align: center; margin-top: 60px;">
+    <img src="assests/larryCoin.png" alt="Larry Logo" class="about-logo">
+  </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="tokenomics" id="tokenomics">
+        <h2>Larrynomics 💰</h2>
+        <div class="supply-info">Total Supply: 1,000,000,000 $LARRY</div>
+        <div class="token-grid">
+            <div class="token-card">
+                <div class="token-percentage">50%</div>
+                <div class="token-label">🔥 Burned</div>
+                <div class="token-desc">Larry ate it</div>
+            </div>
+            <div class="token-card">
+                <div class="token-percentage">25%</div>
+                <div class="token-label">💧 Liquidity</div>
+                <div class="token-desc">For those who bark loud</div>
+            </div>
+            <div class="token-card">
+                <div class="token-percentage">15%</div>
+                <div class="token-label">🎁 Community</div>
+                <div class="token-desc">Airdrops & lucky poops</div>
+            </div>
+            <div class="token-card">
+                <div class="token-percentage">10%</div>
+                <div class="token-label">📢 Marketing</div>
+                <div class="token-desc">Taking Larry to Mars</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+        <h2>Roadpoop 🗺️</h2>
+        <div class="roadmap-timeline">
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 1: "Smells Good" 👃</h3>
+                <ul>
+                    <li>Launch on Solana</li>
+                    <li>Viral meme campaign</li>
+                    <li>Airdrop to Larry believers</li>
+                    <li>NFT collection: "Lucky Poops"</li>
+                    <li>1,000+ holders</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 2: "Mark Territory" 🏴</h3>
+                <ul>
+                    <li>DEX listings (Raydium, Jupiter)</li>
+                    <li>CEX applications</li>
+                    <li>Merch store launch</li>
+                    <li>Partnerships with crypto influencers</li>
+                    <li>10,000+ holders</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 3: "Barking to the Moon" 🌙</h3>
+                <ul>
+                    <li>Major CEX listings</li>
+                    <li>Flappy Larry mobile game</li>
+                    <li>Fashion tech integration</li>
+                    <li>Larry statue in Times Square</li>
+                    <li>100,000+ holders</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section class="how-to-buy" id="how-to-buy">
+        <h2>How to Buy 🛒</h2>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Get a Wallet</h3>
+                <p>Download Phantom or Solflare wallet for Solana</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Buy SOL</h3>
+                <p>Purchase SOL from Coinbase, Binance, or similar</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Connect to DEX</h3>
+                <p>Go to Raydium or Jupiter and connect wallet</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Swap for $LARRY</h3>
+                <p>Paste the CA and swap SOL for $LARRY</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <h2>Join the Pack 🐾</h2>
+        <p style="font-size: 1.4rem; color: var(--text-dim); margin-bottom: 30px;">Be part of the filthiest community on Solana</p>
+        <div class="social-grid">
+            <a href="https://x.com/TheDogLarry" class="social-card" target="_blank">
+                <div class="social-icon"><img src="assests/x-3d-logo-free-png.png" alt="X Logo" class="about-logo"></div>
+                
+                <h3>X</h3>
+                <p>Follow for updates</p>
+            </a>
+            <a href="https://t.me/larrypoopgang" class="social-card" target="_blank">
+                <div class="social-icon"><img src="assests/telegram-3d-logo-free-png.png" alt="Telegram Logo" class="about-logo"></div>
+                <h3>Telegram</h3>
+                <p>Join the conversation</p>
+            </a>
+            <a href="#" class="social-card">
+                <div class="social-icon"><img src="assests/chart-logo.png" alt="Chart Logo" class="about-logo"></div>
+                <h3>Chart</h3>
+                <p>Track the price</p>
+            </a>
+            <a href="#" class="social-card">
+                <div class="social-icon"><img src="assests/tiktok-3d-logo-free-png.png" alt="TikTok Logo" class="about-logo"></div>
+                <h3>TikTok</h3>
+                <p>Watch Larry videos</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-tagline">"$LARRY doesn't have a whitepaper, he has toilet paper." 🧻</div>
+        <div class="footer-subtitle">HODL and pray. The next millionaire smells funny. 💩🚀</div>
+        
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> $LARRY is a memecoin with no intrinsic value or expectation of financial return. 
+            This is a community-driven entertainment project. Cryptocurrency investments are highly speculative and risky. 
+            Only invest what you can afford to lose. DYOR (Do Your Own Research). 
+            Not financial advice. Trade at your own risk.
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">© 2025 $LARRY - All rights reserved</p>
+    </footer>
+</body>
+</html>
