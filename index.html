@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$LTD LarryTheDog - The Filthiest Shit-tzu on Solana</title>
-    <meta name="description" content="Larry - Eats poop, shares wealth. The filthiest shit-tzu memecoin on Solana. Join the pack and bark to the moon.">
+    <title>$LTD LarryTheDog - The Filthiest Shih Tzu on Solana</title>
+    <meta name="description" content="Larry - Eats poop, shares wealth. The filthiest shih tzu memecoin on Solana with real utility. Join the pack and bark to the moon.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap');
 
@@ -311,6 +311,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
 
         .token-card {
@@ -344,11 +345,98 @@
         .token-desc {
             color: var(--text-dim);
             font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .tax-info {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .tax-info h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .tax-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .tax-item {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+        }
+
+        .tax-item strong {
+            color: var(--gold);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tax-item p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Utility Section */
+        .utility {
+            background: var(--darker-bg);
+        }
+
+        .utility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .utility-card {
+            background: linear-gradient(135deg, var(--card-bg), #2a2a2a);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .utility-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .utility-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .utility-card h3 {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .utility-card p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
         /* Roadmap */
         .roadmap {
-            background: var(--darker-bg);
+            background: var(--dark-bg);
         }
 
         .roadmap-timeline {
@@ -399,7 +487,7 @@
 
         /* How to Buy */
         .how-to-buy {
-            background: var(--dark-bg);
+            background: var(--darker-bg);
         }
 
         .steps-grid {
@@ -442,7 +530,7 @@
 
         /* Community */
         .community {
-            background: var(--darker-bg);
+            background: var(--dark-bg);
             text-align: center;
         }
 
@@ -519,6 +607,7 @@
             h2 { font-size: 2.8rem; }
             .about-content { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .tax-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 600px) {
@@ -534,20 +623,20 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo-nav">$LTD LarryTheDog 💩</div>
+        <div class="logo-nav">$LTD 💩</div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
+            <a href="#utility">Utility</a>
             <a href="#roadmap">Roadmap</a>
-            <a href="#how-to-buy">How to Buy</a>
-            <a href="https://t.me/larrypoopgang" class="btn-nav" target="_blank">Join Community 🚀</a>
+            <a href="#how-to-buy">Buy</a>
+            <a href="https://t.me/larrypoopgang" class="btn-nav" target="_blank">Join 🚀</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <!-- Reemplaza esta URL con tu imagen del banner completo -->
             <img src="assests/larrybanner.jpeg" alt="Larry Banner" class="hero-banner">
             
             <h1>$LTD LarryTheDog</h1>
@@ -560,186 +649,298 @@
 
             <div class="ca-container">
                 <div class="ca-label">📝 Contract Address (CA)</div>
-                <div class="ca-address">TBA - Coming Soon 🚀</div>
+                <div class="ca-address">TBA - Launching Soon 🚀</div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
-        
-        <h2>Who is LarryTheDog? 🦴</h2>
+        <h2>Who is Larry? 🦴</h2>
 
+        <div class="about-text" style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
+            <p>They say he devoured a cold wallet.<br>
+            That he sniffed out the memetic frequencies of the blockchain itself.<br>
+            That the moon was just his bathroom break.</p>
 
+            <p>But no one really knows where he came from.<br>
+            What we do know is this:</p>
 
+            <p>One day, a black-and-white creature appeared. Small. Furry. Glorious.<br>
+            With eyes full of innocence... and a dark, filthy purpose.</p>
 
-  <div class="about-text" style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.2rem;">
-    <p>They say he devoured a cold wallet.<br>
-    That he sniffed out the memetic frequencies of the blockchain itself.<br>
-    That the moon was just his bathroom break.</p>
+            <p>Larry — or as the chain would come to know him:<br>
+            <strong>The Shih Tzu of Solana.</strong></p>
 
-    <p>But no one really knows where he came from.<br>
-    What we do know is this:</p>
+            <p>He didn't chase bones. He didn't fetch sticks.<br>
+            He chased… something deeper. Something brown. Something shameful.</p>
 
-    <p>One day, a black-and-white creature appeared. Small. Furry. Glorious.<br>
-    With eyes full of innocence... and a dark, filthy purpose.</p>
+            <p>And when the world laughed, he didn't care.<br>
+            He turned his flaw into fuel. His gross little habit… into a glorious digital revolution.</p>
 
-    <p>Larry — or as the chain would come to know him:<br>
-    <strong>The Shit-Tzu of Solana.</strong></p>
+            <p>Now, $LTD can't be stopped.<br>
+            It multiplies. It moonwalks. It stinks of destiny.</p>
 
-    <p>He didn’t chase bones. He didn’t fetch sticks.<br>
-    He chased… something deeper. Something brown. Something shameful.</p>
+            <p><em>But the truth? The real story behind Larry?<br>That hasn't been told… yet.</em></p>
 
-    <p>And when the world laughed, he didn’t care.<br>
-    He turned his flaw into fuel. His gross little habit… into a glorious digital revolution.</p>
+            <p><strong>$LTD isn't just a token.<br>
+            It's a tribute to imperfection, loyalty, and glorious absurdity.</strong></p>
 
-    <p>Now, $LTD LarryTheDog can’t be stopped.<br>
-    It multiplies. It moonwalks. It stinks of destiny.</p>
+            <p><strong>Worship the weird. Embrace the stink. Bark to the moon.</strong></p>
+        </div>
 
-    <p><em>But the truth? The real story behind Larry?<br>That hasn’t been told… yet.</em></p>
-
-    <p><strong>$LTD LarryTheDog isn’t just a token.<br>
-    It’s a tribute to imperfection, loyalty, and glorious absurdity.</strong></p>
-
-    <p><strong>Worship the weird. Embrace the stink. Bark to the moon.</strong></p>
-  </div>
-
-  <div style="text-align: center; margin-top: 60px;">
-    <img src="assests/larryCoin.png" alt="Larry Logo" class="about-logo">
-  </div>
+        <div style="text-align: center; margin-top: 60px;">
+            <img src="assests/larryCoin.png" alt="Larry Logo" class="about-logo">
+        </div>
     </section>
 
-    <!-- Agregar después de la sección About, antes de Tokenomics -->
-<section class="litepaper-download" style="background: var(--dark-bg); padding: 60px 5%; text-align: center;">
-    <h2>Want to Learn More? 📚</h2>
-    <p style="font-size: 1.3rem; color: var(--text-dim); margin-bottom: 30px;">
-        Read the full technical documentation and project vision
-    </p>
-    <a href="assests/larry-litepaper-v1.pdf" class="btn btn-primary" download>
-        📥 Download Litepaper (PDF)
-    </a>
-    <a href="https://larrythedog.info" class="btn btn-secondary" style="margin-left: 20px;">
-        📖 Read Full Documentation
-    </a>
-</section>
-
+    <!-- Litepaper Download -->
+    <section class="litepaper-download" style="background: var(--dark-bg); padding: 60px 5%; text-align: center;">
+        <h2>Want to Learn More? 📚</h2>
+        <p style="font-size: 1.3rem; color: var(--text-dim); margin-bottom: 30px;">
+            Read the full technical documentation and project vision
+        </p>
+        <a href="assests/larry-litepaper-v1.pdf" class="btn btn-primary" download>
+            📥 Download Litepaper (PDF)
+        </a>
+        <a href="https://larrythedog.info" class="btn btn-secondary" style="margin-left: 20px;">
+            📖 Full Documentation
+        </a>
+    </section>
 
     <!-- Tokenomics Section -->
     <section class="tokenomics" id="tokenomics">
-        <h2>LarryTheDognomics 💰</h2>
-        <div class="supply-info">Total Supply: 1,000,000,000 $LARRY</div>
+        <h2>Tokenomics 💰</h2>
+        <div class="supply-info">Total Supply: 1,000,000,000 $LTD</div>
+        
         <div class="token-grid">
             <div class="token-card">
                 <div class="token-percentage">50%</div>
                 <div class="token-label">🔥 Burned</div>
-                <div class="token-desc">Larry ate it</div>
+                <div class="token-desc">500M tokens sent to burn address permanently. Larry ate it all.</div>
             </div>
+            
             <div class="token-card">
-                <div class="token-percentage">25%</div>
-                <div class="token-label">💧 Liquidity</div>
-                <div class="token-desc">For those who bark loud</div>
+                <div class="token-percentage">30%</div>
+                <div class="token-label">💧 Liquidity Pool</div>
+                <div class="token-desc">300M tokens locked forever in Raydium. No rug pull possible.</div>
             </div>
+            
             <div class="token-card">
                 <div class="token-percentage">15%</div>
                 <div class="token-label">🎁 Community</div>
-                <div class="token-desc">Airdrops & lucky poops</div>
+                <div class="token-desc">150M tokens<br>• 20% unlocked (airdrops & contests)<br>• 80% vested over 12 months</div>
             </div>
+            
             <div class="token-card">
-                <div class="token-percentage">10%</div>
-                <div class="token-label">📢 Marketing</div>
-                <div class="token-desc">Taking Larry to Mars</div>
+                <div class="token-percentage">5%</div>
+                <div class="token-label">👥 Founders</div>
+                <div class="token-desc">50M tokens with long vesting periods. Aligned with community success.</div>
+            </div>
+        </div>
+
+        <!-- Tax Information -->
+        <div class="tax-info">
+            <h3>📊 Tax Structure</h3>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">
+                Fair taxes to fund continuous development and create deflationary pressure
+            </p>
+            
+            <div class="tax-grid">
+                <div class="tax-item">
+                    <strong>🟢 Buy Tax: 1%</strong>
+                    <p>• 0.5% → Development Treasury<br>• 0.5% → Auto-burn (deflation)</p>
+                </div>
+                
+                <div class="tax-item">
+                    <strong>🔴 Sell Tax: 2%</strong>
+                    <p>• 1.0% → Development Treasury<br>• 0.5% → Auto-burn<br>• 0.5% → Marketing</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 0.95rem; color: var(--text-dim);">
+                All tax funds transparently tracked on-chain and used for team salaries, development, marketing, and partnerships.
+            </p>
+        </div>
+    </section>
+
+    <!-- Utility Section -->
+    <section class="utility" id="utility">
+        <h2>Real Utility, Not Just Hype 🛠️</h2>
+        <p style="text-align: center; font-size: 1.3rem; color: var(--text-dim); margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            Unlike 99% of memecoins, $LTD is building real products that generate actual revenue and provide lasting value
+        </p>
+
+        <div class="utility-grid">
+            <div class="utility-card">
+                <div class="utility-icon">🎮</div>
+                <h3>Larry Virtual Pet</h3>
+                <p>
+                    Play-to-earn Tamagotchi-style game where you care for your own Larry NFT. 
+                    Feed, walk, play, and compete with other Larrys to earn $LPOOP tokens daily.
+                    <br><br>
+                    <strong>Launch: Q1 2026</strong>
+                </p>
+            </div>
+
+            <div class="utility-card">
+                <div class="utility-icon">💳</div>
+                <h3>Payment Gateway</h3>
+                <p>
+                    Accept $LTD and $LPOOP at pet stores, vets, and groomers. 
+                    Holders get exclusive discounts and rewards when paying with Larry tokens.
+                    <br><br>
+                    <strong>Beta: Q2 2026</strong>
+                </p>
+            </div>
+
+            <div class="utility-card">
+                <div class="utility-icon">🎁</div>
+                <h3>Dual-Token Loyalty</h3>
+                <p>
+                    $LTD for trading + $LPOOP for rewards and in-game transactions. 
+                    Earn $LPOOP by holding $LTD, shopping at partner stores, and playing games.
+                    <br><br>
+                    <strong>Launch: Q4 2026</strong>
+                </p>
+            </div>
+
+            <div class="utility-card">
+                <div class="utility-icon">📺</div>
+                <h3>Content Platform</h3>
+                <p>
+                    Original Larry mininovelas, animations, and exclusive content. 
+                    Monetized through ads, sponsorships, and holder-only access to premium episodes.
+                    <br><br>
+                    <strong>Launch: Q1 2026</strong>
+                </p>
+            </div>
+
+            <div class="utility-card">
+                <div class="utility-icon">🏪</div>
+                <h3>Pet Store Network</h3>
+                <p>
+                    Growing network of pet stores accepting Larry tokens. 
+                    Partnership with 100+ stores globally by 2027, creating real-world demand for $LTD.
+                    <br><br>
+                    <strong>Rollout: 2026-2027</strong>
+                </p>
+            </div>
+
+            <div class="utility-card">
+                <div class="utility-icon">🖼️</div>
+                <h3>NFT Collection</h3>
+                <p>
+                    10,000 unique Larry NFTs with actual utility: game access, breeding rights, governance votes, 
+                    and exclusive airdrops. Holders earn rewards multipliers.
+                    <br><br>
+                    <strong>Mint: Q1 2026</strong>
+                </p>
             </div>
         </div>
     </section>
 
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+        <h2>Roadpoop 🗺️</h2>
+        <div class="roadmap-timeline">
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 1: "First Sniff" 🐕 (Q4 2025)</h3>
+                <ul>
+                    <li>Token launch on Solana</li>
+                    <li>Community building & viral marketing</li>
+                    <li>CoinGecko & CoinMarketCap listings</li>
+                    <li>Target: 10,000 holders</li>
+                    <li>Build social media presence (50K+ followers)</li>
+                </ul>
+            </div>
 
-<!-- Roadmap Section -->
-<section class="roadmap" id="roadmap">
-    <h2>Roadpoop 🗺️</h2>
-    <div class="roadmap-timeline">
-        <div class="roadmap-phase">
-            <h3 class="phase-title">Phase 1: "First Sniff" 🐕</h3>
-            <ul>
-                <li>Launch on Solana</li>
-                <li>Community building</li>
-                <li>Viral meme campaign</li>
-                <li>DEX listings</li>
-                <li>Character & lore development</li>
-            </ul>
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 2: "The Story Begins" 📱 (Q1 2026)</h3>
+                <ul>
+                    <li>Larry Virtual Pet game MVP launch</li>
+                    <li>Mininovelas content series (Episodes 1
+                    <li>Mininovelas content series (Episodes 1-5)</li>
+                    <li>NFT collection launch (10,000 pieces)</li>
+                    <li>Strategic partnerships with pet brands</li>
+                    <li>Target: 50,000 holders</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 3: "Real World Utility" 🏪 (Q2-Q3 2026)</h3>
+                <ul>
+                    <li>Payment gateway beta (5-10 pet stores)</li>
+                    <li>$LPOOP utility token launch</li>
+                    <li>Dual-token loyalty program live</li>
+                    <li>Larry Virtual Pet full expansion (races, battles)</li>
+                    <li>Mobile app launch (iOS + Android)</li>
+                    <li>Target: 100,000 holders</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 4: "The Larry Universe" 🌍 (2027)</h3>
+                <ul>
+                    <li>100+ pet stores accepting $LTD globally</li>
+                    <li>Larry metaverse integration</li>
+                    <li>Media platform with streaming content</li>
+                    <li>Major brand collaborations</li>
+                    <li>International expansion (LATAM, Asia)</li>
+                    <li>Target: 250,000+ holders</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <h3 class="phase-title">Phase 5: "Legendary" 🚀 (2028+)</h3>
+                <ul>
+                    <li>500+ stores in global network</li>
+                    <li>DAO governance implementation</li>
+                    <li>Major CEX listings (Binance, Coinbase consideration)</li>
+                    <li>Pet welfare charity initiatives</li>
+                    <li>Larry becomes a household name</li>
+                    <li>Self-sustaining ecosystem with multiple revenue streams</li>
+                </ul>
+            </div>
         </div>
-
-        <div class="roadmap-phase">
-            <h3 class="phase-title">Phase 2: "The Story Begins" 📱</h3>
-            <ul>
-                <li>Original content series</li>
-                <li>Multi-platform media expansion</li>
-                <li>Exclusive NFT collection</li>
-                <li>Strategic partnerships</li>
-                <li>Holder rewards program</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-phase">
-            <h3 class="phase-title">Phase 3: "Real World Utility" 🏪</h3>
-            <ul>
-                <li>Loyalty rewards ecosystem</li>
-                <li>Payment integration with partners</li>
-                <li>Utility token introduction</li>
-                <li>Global retail partnerships</li>
-                <li>Interactive community features</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-phase">
-            <h3 class="phase-title">Phase 4: "The LarryTheDog Universe" 🌍</h3>
-            <ul>
-                <li>Expanded media empire</li>
-                <li>Mobile app launch</li>
-                <li>Fashion & merchandise collab</li>
-                <li>International scaling</li>
-                <li>Self-sustaining ecosystem</li>
-            </ul>
-        </div>
-
-        <div class="roadmap-phase">
-            <h3 class="phase-title">Phase 5: "Legendary" 🚀</h3>
-            <ul>
-                <li>Community governance (DAO)</li>
-                <li>Major exchange listings</li>
-                <li>Global pet welfare initiatives</li>
-                <li>Entertainment partnerships</li>
-                <li>LarryTheDog becomes a movement</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- How to Buy Section -->
     <section class="how-to-buy" id="how-to-buy">
-        <h2>How to Buy 🛒</h2>
+        <h2>How to Buy $LTD 🛒</h2>
         <div class="steps-grid">
             <div class="step">
                 <div class="step-number">1</div>
                 <h3>Get a Wallet</h3>
-                <p>Download Phantom or Solflare wallet for Solana</p>
+                <p>Download Phantom or Solflare wallet for Solana from their official websites</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
                 <h3>Buy SOL</h3>
-                <p>Purchase SOL from Coinbase, Binance, or similar</p>
+                <p>Purchase SOL from Coinbase, Binance, or any major exchange</p>
             </div>
             <div class="step">
                 <div class="step-number">3</div>
                 <h3>Connect to DEX</h3>
-                <p>Go to Raydium or Jupiter and connect wallet</p>
+                <p>Go to Raydium or Jupiter and connect your wallet securely</p>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <h3>Swap for $LTD</h3>
-                <p>Paste the CA and swap SOL for $LTD</p>
+                <p>Paste the contract address and swap your SOL for $LTD tokens</p>
             </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>HODL & Enjoy</h3>
+                <p>Welcome to the pack! Join our Telegram and participate in the community</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <p style="font-size: 1.3rem; color: var(--text-dim); margin-bottom: 20px;">
+                Need help? Join our Telegram community for step-by-step guidance
+            </p>
+            <a href="https://t.me/larrypoopgang" class="btn btn-primary" target="_blank">Get Help on Telegram</a>
         </div>
     </section>
 
@@ -750,41 +951,108 @@
         <div class="social-grid">
             <a href="https://x.com/TheDogLarry" class="social-card" target="_blank">
                 <div class="social-icon"><img src="assests/x-3d-logo-free-png.png" alt="X Logo" class="about-logo"></div>
-                
-                <h3>X</h3>
-                <p>Follow for updates</p>
+                <h3>X (Twitter)</h3>
+                <p>Follow for updates & memes</p>
             </a>
             <a href="https://t.me/larrypoopgang" class="social-card" target="_blank">
                 <div class="social-icon"><img src="assests/telegram-3d-logo-free-png.png" alt="Telegram Logo" class="about-logo"></div>
                 <h3>Telegram</h3>
                 <p>Join the conversation</p>
             </a>
-            <a href="#" class="social-card">
+            <a href="#" class="social-card" onclick="alert('Chart will be available after launch!'); return false;">
                 <div class="social-icon"><img src="assests/chart-logo.png" alt="Chart Logo" class="about-logo"></div>
                 <h3>Chart</h3>
-                <p>Track the price</p>
+                <p>Track the price (post-launch)</p>
             </a>
-            <a href="#" class="social-card">
+            <a href="https://larrythedog.info" class="social-card" target="_blank">
+                <div class="social-icon">📚</div>
+                <h3>Documentation</h3>
+                <p>Read full technical docs</p>
+            </a>
+            <a href="#" class="social-card" onclick="alert('TikTok coming soon!'); return false;">
                 <div class="social-icon"><img src="assests/tiktok-3d-logo-free-png.png" alt="TikTok Logo" class="about-logo"></div>
                 <h3>TikTok</h3>
-                <p>Watch LarryTheDog videos</p>
+                <p>Watch Larry videos (soon)</p>
+            </a>
+            <a href="https://discord.gg/larrythedogxyz" class="social-card" target="_blank">
+                <div class="social-icon">💬</div>
+                <h3>Discord</h3>
+                <p>Community hangout (soon)</p>
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-tagline">"$LTD LarryTheDog doesn't have a whitepaper, he has toilet paper." 🧻</div>
-        <div class="footer-subtitle">HODL and pray. The next millionaire smells funny. 💩🚀</div>
+        <div class="footer-tagline">"While I eat poop, you'll eat caviar" 💩🚀</div>
+        <div class="footer-subtitle">HODL and pray. The next millionaire smells funny.</div>
         
-        <div class="disclaimer">
-            <strong>Disclaimer:</strong> $LTD is a memecoin with no intrinsic value or expectation of financial return. 
-            This is a community-driven entertainment project. Cryptocurrency investments are highly speculative and risky. 
-            Only invest what you can afford to lose. DYOR (Do Your Own Research). 
-            Not financial advice. Trade at your own risk.
+        <div style="margin: 40px 0;">
+            <a href="https://larrythedog.info" style="color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 600;">Documentation</a>
+            <a href="assests/larry-litepaper-v1.pdf" style="color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 600;" download>Litepaper</a>
+            <a href="https://x.com/TheDogLarry" style="color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 600;" target="_blank">Twitter</a>
+            <a href="https://t.me/larrypoopgang" style="color: var(--gold); text-decoration: none; margin: 0 15px; font-weight: 600;" target="_blank">Telegram</a>
         </div>
         
-        <p style="margin-top: 30px; color: #666;">© 2025 $LTD LarryTheDog - All rights reserved</p>
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong> $LTD is a memecoin with utility features. Cryptocurrency investments are highly speculative and risky. 
+            There is no guarantee of financial return. This token is for entertainment and utility purposes within the Larry ecosystem. 
+            Only invest what you can afford to lose. Do Your Own Research (DYOR). 
+            Not financial advice. Trade at your own risk. By purchasing $LTD, you acknowledge these risks.
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">© 2025 LarryTheDog ($LTD) - All rights reserved</p>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9rem;">
+            Built on Solana | Powered by the community | Audited by [TBA]
+        </p>
     </footer>
+
+    <!-- Scroll to Top Button (Optional) -->
+    <script>
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        let lastScroll = 0;
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Copy CA to clipboard function (activate after launch)
+        function copyCA() {
+            const ca = document.querySelector('.ca-address').innerText;
+            if (ca !== 'TBA - Launching Soon 🚀') {
+                navigator.clipboard.writeText(ca).then(() => {
+                    alert('Contract Address copied to clipboard!');
+                });
+            }
+        }
+
+        // Add click event to CA container after launch
+        document.querySelector('.ca-container').addEventListener('click', copyCA);
+        document.querySelector('.ca-container').style.cursor = 'pointer';
+        document.querySelector('.ca-container').title = 'Click to copy';
+    </script>
 </body>
-</html>
+</html>                        
